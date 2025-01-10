@@ -1,0 +1,32 @@
+ //const number = parseInt(prompt("Enter a number:"));
+       //if (number % 2 === 0 && number % 3 === 0) console.log("Divisible by both 2 and 3");
+       //else if (number % 2 === 0) console.log("Divisible by 2");
+       //else if (number % 3 === 0) console.log("Divisible by 3");
+       //else console.log("Not divisible by 2 or 3");
+
+       // Get three numbers from the user
+//let num1 = parseFloat(prompt("Enter the first number:"));
+//let num2 = parseFloat(prompt("Enter the second number:"));
+//let num3 = parseFloat(prompt("Enter the third number:"));
+
+//let largest;
+
+//if (num1 >= num2 && num1 >= num3) {
+  //  largest = num1;
+//} else if (num2 >= num1 && num2 >= num3) {
+  //  largest = num2;
+//} else {
+  //  largest = num3;
+//}
+
+//alert("The largest number is: " + largest);
+
+let totalDays = parseInt(prompt("Enter total working days:"));
+let absentDays = parseInt(prompt("Enter absent days:"));
+
+if (totalDays > 0 && absentDays >= 0 && absentDays <= totalDays) {
+  let percentage = ((totalDays - absentDays) / totalDays) * 100;
+  alert(`Attendance: ${percentage.toFixed(2)}%\nStatus: ${percentage < 75 ? "Not eligible" : "Eligible"} to write the exam.`);
+} else {
+  alert("Invalid input. Please enter valid numbers.");
+}
