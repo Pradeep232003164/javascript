@@ -1,0 +1,158 @@
+Anonymous function:
+A function with out name, After we create a function with out name and we assign it to a variable
+
+Example:
+Sum=function(n1,n2){
+let r=n1+n2
+return r
+}
+console.log(sum(8,9))
+
+
+Arrow functions:
+----Es6 version
+----more readable and more structure
+----anonymous function(lambda functions)
+----without function name but they are assigned to a variable
+
+ex:
+ let c=()=>{
+            document.write("hi hari")
+        }
+        c()
+
+
+Arrow functions with parameter:
+ex:
+let x=(x,y)=>{
+document.write(x+y)
+}
+x(20,30)
+y(40,50)
+
+
+ex:
+arrow function with one argument
+#with out using parenthesis
+let greet=x=>document.write(x);
+greet('hello')
+
+
+ex:
+arrow function with out argument
+let greet=()=>document.write("hello")
+greet()
+
+
+ex: Arrow functions as an expression
+let 18;
+let welcome=(age<18)?
+()=>document.write('hi pradeep'):
+()=>document.write('hi nani');
+welcome()
+
+
+
+---Synchronous and Asynchronous:
+---set by step
+---one task
+
+ex:
+function task1(){
+document.write("task1: : start")
+}
+function task2(){
+document.write("task2: : start")
+}
+function task3(){
+document.write("task3: : start")
+}
+task1()
+task2()
+task3()
+
+ 
+
+
+
+JavaScript callbacks:
+A call back function is function that is passed argument to another function
+
+function greet(name,callback){
+document.write(hello,${name}!
+callback()
+//this  calls the callback function after greeting 
+}
+function sayGoodbye(){
+document.write("GoodBye")
+}
+//call greet and pass sayGoodbye as the callback
+greet("sam",sayGoodbye)
+
+
+PROMISE:three states:
+
+1.pending== still not completed --continuing
+2.fulfilled==task completed 
+3.rejected== the operation is failed
+
+ex:
+let myPromise=new promise((resolve,reject)=>
+{let success=true;
+
+if(success){
+resolve("task completed");
+};else{
+reject("task failed)
+}
+};
+)
+
+PROGRAMS:
+//let c =()=>{
+      //console.log("hi Nani")
+     //}
+     //c()
+
+     //let x=(x,y)=>{
+      //console.log(x+y)
+    // }
+  ///   x(20,30)
+    // y(40,50)
+
+     //let greet=x=>console.log(x);
+//     Greet('hello')
+  //   console.log(x)
+
+
+
+//     let age = 18;
+  //   let welcome =(age<18)?
+  //   ()=> document.write('hi nani'):
+    // ()=> document.write('hi pradeep')
+//     welcome();
+
+//function task1(){
+  //document.write("task1 : start","<br>")
+//}
+
+//function task2(){
+  //document.write("task2 : start","<br>")
+
+//}
+
+//function task3(){
+  //document.write("task2 : start","<br>")
+//}
+//task1()
+//task2()
+//task3()
+
+document.write("hi nani")
+setTimeout(()=>{
+  document.write("Hi Iam Waiting")
+}, 6000);
+document.write("Iam In Lab")
+
+
+
