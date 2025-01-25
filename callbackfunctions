@@ -1,0 +1,190 @@
+callback functions:
+---you can pass the callback function as argument to another function
+
+execution: the function receiving the callback will execute the callback at some point during execution(often at the end or after an asynchronous operation is done)
+
+ex:
+function mainfunction(callback){
+document.write("Executing main function");
+callback()
+//here we call the callback function
+}
+function callbackFunction(){ 
+document.write("callbackfunction executed")
+}
+mainfunction(callbackFunction);
+
+
+exp:
+mainfunction takes a parameter callback
+callbackFunction is passed as an argument to mainfunction
+inside the main function , the callback function
+
+
+
+---output:-
+mainfunction(callbackFunction);
+it will execute the code inside the mainfunction-
+
+it will print("Executing main function");
+then it reaches to callback(); where it call the function which is passed to mainfunction (callbackfunction);
+
+
+
+ex2:
+passing a named function as a callback;
+
+function greet(name ,callback){
+document.write("hello" +name);
+callback();
+//executes the call back function after greeting
+}
+function goodbye()[
+document.erite("Goodbye!")
+}
+greet("Hari" ,goodbye);
+
+
+
+ex:3
+function greet(name ,callback){
+document.write("hello" +name);
+callback();//executes the call back function after greeting
+}
+greet("hari" , function(){
+document.write("goodbye!")
+})
+//anonymous function as function
+
+
+ex:
+we did not pass a named function like(goodbye);
+instead of that we defined an anonymous function directly with in the greet function call
+
+
+ex4:
+asynchronous callback eith setTimeout
+
+function greet(name , callback){
+document.write("hello"+name);
+callback()
+//executes the callback
+
+
+function fetchData(callback){
+document.write("Fetching data...")
+setTimeout(function){
+document.erite("Data fetched");
+callback();
+},2000);
+}
+
+function processData(){
+document.write("processing the fetched data...")
+}
+fetchData(processData);
+
+
+
+ex:5
+using a callback with array methods(map)
+const numbers=[1,2,3,4,5]
+const d= numbers.map(function(num) {
+return num*2
+})
+document.write(d)
+
+ex: map() is a built in array method that callback function to process each item in array
+the call back here doubles each number (num*2) and will result  a new array with double values
+
+user registration scenario based:
+ex:
+function registeruser(username,email,callback){
+document.write("regidtering user" +username);
+setTimeout(function(){
+document.erite("user" + username + "registered successfully");
+callback(email);
+},2000);
+}
+
+function sendWelcomeEmail(email){
+document.write("sending welcome email to"+email);
+};
+registerUser("hari" , "hari123@gmail.com , sendWelcomeEmail);
+})
+
+
+#Programs
+
+function mainfunction(callback){
+  //console.log("executing main function");
+  //callback()
+
+//}
+//function callbackFunction(){
+  //console.log("callback function executed")
+
+//}
+//mainfunction(callbackFunction);
+
+function greet(name, callback ){
+console.log("hello" +name);
+callback();
+
+}
+function goodbye(){
+  console.log("GoodBye!!")
+
+}
+greet("Pradeep", goodbye);
+
+//anonymous function
+function greet(name, callback ){
+  console.log("hello" +name);
+  callback();
+  
+  }
+  greet("pradeep", function(){
+    console.log("goodbye!")
+  });
+
+  // asynchronous funtion with timeout
+
+  function greet(name, callback) {
+    console.log("Hello " + name);
+    setTimeout(callback, 2000); // Delays the callback execution by 2 seconds
+  }
+  
+  greet("Pradeep", function () {
+    console.log("Goodbye!!");
+  });
+
+
+  function fetchData(callback){
+    document.write("Fetching data from the server... <br>");
+    setTimeout(function(){
+        document.write("Data fetched successfully!<br>");
+        callback()
+    },2000);
+}
+function processData(){
+    document.write("Processing the fetched data... <br>");
+}
+fetchData(processData);
+
+
+
+  function registeruser(username, email, callback) {
+    console.log("registering user" + username);
+    setTimeout(function () {
+      console.log("user" + username + "registered succesfully");
+      callback(email);
+    }, 2000);
+  }
+  function sendWelcomeEmail(email) {
+    console.log("sending welcome email to" + email);
+  }
+  registeruser("Pradeep", "Pradeep123@gmail.com,sendWelcomeEmail");
+
+
+  
