@@ -1,0 +1,108 @@
+promise:
+--A promise a special js object that represents the eventual completion (or failure) asynchronuous operation.
+>it allows to handle asynchronous tasks more effects than callback
+
+three states:
+1.pending: the intial state, the promise is still waiting for the operation to finsh
+2.fulfilled: the operation completed successfully
+3.rejected: the operaton failed;
+
+exp:-
+1.to create a promise - new promise()
+two paramenters-
+resolve -- to make the promise as successfully
+reject -mark it as failed
+
+
+2.handling the result:
+.then() method is called when promise is fulfilled.
+It will receives the result from resolve()
+
+.catch() method is called if the promise is rejected it receives the error message from reject()
+
+
+ex:-
+let mypromise = new ptomise((resolve,reject)=>1{
+let success = true;
+if(success){
+resolve("the operation is successfull);
+}esle{
+reject("the operation failed")
+}
+});
+mypromise
+.then(result=>{
+document.write(error);
+});
+
+
+
+chaining promise
+ex:
+let promise = new promise((resolve , reject)=>{
+resolve(5);
+// intial resolve value is 5
+})
+promise
+.then(result =>{
+document.write(result);
+return resutl+3
+//return a new value
+})
+.then(result=>{
+document.write(result);
+})
+.catch(error=>{
+document.write(result);
+})
+
+
+
+ex: promise with setTimOut
+---asynchronous task using setTimeOut, and the promise will resolve after a certain amount of time
+
+
+// Programs
+/myPromise
+    //.then(result => {
+      //document.write(result);
+    //})
+    //.catch(error => {
+      //document.write(error); 
+    //});
+  
+    //let promise = new Promise((resolve, reject) => {
+      //resolve(5);
+    //});
+    
+   // promise
+     // .then(result => {
+        //document.write(result,"<br>");
+       // return result + 3;      
+      //})
+     // .then(result => {
+       // document.write(result,"<br>"); 
+      //})
+      //.catch(error => {
+        //document.write("error: ", error,"<br>"); 
+      //});
+
+
+      let promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          let success = true; // Change to `false` to simulate a rejection
+          if (success) {
+            resolve("Operation completed after 2 seconds");
+          } else {
+            reject("Operation failed after 2 seconds");
+          }
+        }, 2000); // Delay of 2 seconds
+      });
+      
+      promise
+        .then(result => {
+          document.write(result); // Writes the resolved value
+        })
+        .catch(error => {
+          document.write("Error: ", error); // Writes the error message
+        });
