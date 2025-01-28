@@ -1,0 +1,6 @@
+// dom(document object model)
+   // dom represents th html document as a Tree
+  //each node in the tree represents the elements , an attribute or text 
+   // maipulation using javascript , you can interact with elements on the web page , changing the content , styles can add or remove elements..
+   //event handling : you can handle interactrions like click or pressing the button...
+   //
