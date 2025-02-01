@@ -1,0 +1,21 @@
+let customer1 = parseFloat(prompt("Enter the total amount of bill for customer 1"));
+let customer2 = parseFloat(prompt("Enter the total amount of bill for customer 2"));
+let customer3 = prompt("Are you a premium member? (yes/no)").toLowerCase();
+
+if ((customer1 > 100) || (customer2 > 50 && customer2 <= 100) || customer3 === "yes") {
+    document.write("You get a 20% discount");
+} else {
+    document.write("You get a 10% discount");
+}
+
+
+
+let age = prompt("Enter Your Age");
+        let citizen = prompt("Are You a Citizen? (yes/no)");
+        let citizenship = prompt("Did You Test The Citizenship? (indian/other)");
+        
+        if (age >= 18 && citizenship === "indian") {
+            document.write("You Are Eligible To Vote");
+        } else {
+            document.write("You Are Not Eligible To Vote");
+        } 
