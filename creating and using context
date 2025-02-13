@@ -24,3 +24,87 @@ function User4(){
   return<div>{data}</div>
 }
 export default App;
+
+ASSIGNMENT
+
+import React from "react";
+
+function App() {
+  const data = {
+    name: "Pradeep",
+    email: "pradeepreddy@gmail.com"
+  };
+
+  return <User1 data={data} />;
+}
+
+function User1({ data}) {
+  return <User2 data={data} />;
+}
+
+function User2({ data }) {
+  return <User3 data={data} />;
+}
+
+function User3({ data }) {
+  return <Profile data={data} />;
+}
+
+function Profile({ data }) {
+  return (
+    <div>
+      
+      <h2>Name: {data.name}</h2>
+      <h2>Email: {data.email}</h2>
+    </div>
+  );
+}
+
+export default App;
+
+ASSIGNMENT
+
+
+import React, { createContext, useContext } from "react";
+
+
+const UserContext = createContext();
+
+function App() {
+  const user = {
+    name: "Pradeep ",
+    email: "pradeepreddy@gmail.com"
+  };
+
+  return (
+    <UserContext.Provider value={user}>
+      <User1 />
+    </UserContext.Provider>
+  );
+}
+
+function User1() {
+  return <User2 />;
+}
+
+function User2() {
+  return <User3 />;
+}
+
+function User3() {
+  return <Profile />;
+}
+
+
+function Profile() {
+  const user = useContext(UserContext);
+  
+  return (
+    <div>
+     <p>Name: {user.name}</p>
+      <p>Email: {user.email}</p>
+    </div>
+  );
+}
+
+export default App;
